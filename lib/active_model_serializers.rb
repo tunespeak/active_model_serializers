@@ -18,11 +18,11 @@ if defined?(Rails)
         require_relative "generators/resource_override"
       end
 
-      initializer "include_routes.active_model_serializer" do |app|
-        ActiveSupport.on_load(:active_model_serializers) do
-          include app.routes.url_helpers
-        end
-      end
+      # initializer "include_routes.active_model_serializer" do |app|
+      #   ActiveSupport.on_load(:active_model_serializers) do
+      #     include app.routes.url_helpers
+      #   end
+      # end
 
       initializer "caching.active_model_serializer" do |app|
         ActiveModel::Serializer.perform_caching = app.config.action_controller.perform_caching
